@@ -1,18 +1,44 @@
 ---
+import "@fontsource/suez-one";
 import "../style.scss";
 import List from "../components/Address";
+import { SEO } from "astro-seo";
+
+let title = "Arbitrum Airdrop Util 🪐";
+let desc = "Bulk check Arbitrum airdrop claim amounts";
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
-    <title>Arbitrum Airdrop Tool</title>
+    <meta property="og:image" content="/favicon.png" />
+    <title>{title}</title>
+    <SEO
+      title={title}
+      description={desc}
+      extend={{
+        link: [{ rel: "icon", href: "/favicon.png" }],
+      }}
+    />
   </head>
 
-  <body>
+  <body class="flex flex-col m-4 gap-4">
+    <div class="flex items-center justify-center gap-4">
+      <div class="bg-pink-300 p-[1px]">
+        <img
+          src="/mascot.png"
+          class="object-contain w-24 md:w-32 h-24 md:h-32 shadow-xl"
+        />
+      </div>
+      <div class="bolder text-3xl md:text-4xl text-white text-center">
+        <span class="text-5xl">Arbitrum</span>
+        <br />
+        Airdrop Util 🪐
+      </div>
+    </div>
     <List client:load />
   </body>
 </html>

@@ -51,44 +51,42 @@ const List = () => {
   }, [addrs]);
 
   return (
-    <div className="flex flex-col items-center gap-6 justify-center m-4">
-      <div className="underline bolder text-4xl text-white text-center">
-        <span className="text-5xl">Arbitrum</span> <br />
-        Airdrop Tool 🪂
-      </div>
-      <div className="underline bolder text-4xl text-white">
+    <div className="flex flex-col items-center gap-6 justify-center">
+      <div className="underline bolder text-2xl md:text-4xl text-white">
         Check Addresses:
       </div>
       <textarea
-        placeholder="Separate by newlines or commas"
-        className="w-3/4 md:w-2/5 xl:w-1/2 h-36 text-center p-4"
+        placeholder="Separate by new lines and/or commas"
+        className="w-5/6 md:w-2/5 xl:w-1/3 h-36 text-center p-4 ring-1 ring-slate-900/10 shadow-sm rounded-md focus:outline-none focus:ring-2 focus:ring-pink-700"
         value={input}
         onInput={(res) => {
           setInput(res.currentTarget.value);
         }}
       />
 
-      <div className="underline bolder text-4xl text-white">
+      <div className="underline bolder text-2xl md:text-4xl text-white">
         {addrs.length > 0 ? "Results" : "Detected"}: {addrs.length} Addresses
       </div>
-      {Object.entries(results).map(([x, allo], i) => {
-        return (
-          <div
-            key={i}
-            className="flex items-center justify-around text-white w-full"
-          >
-            <a
-              target="_blank"
-              rel="noreferrer noopener"
-              href={`https://arbiscan.io/address/${x}`}
-              className="underline hover:text-pink-400"
-            >
-              {x.slice(0, 4) + `...` + x.slice(x.length - 4, x.length)}
-            </a>
-            <div className="text-right">{allo} ARB</div>
-          </div>
-        );
-      })}
+      <div className="grid grid-cols-1 lg:grid-cols-2 w-full md:w-3/4">
+        {Object.entries(results)
+          .sort((a, b) => Number(a[1]) - Number(b[1]))
+          .map(([x, allo], i) => {
+            return (
+              <a
+                target="_blank"
+                rel="noreferrer noopener"
+                href={`https://arbiscan.io/address/${x}`}
+                className="flex items-center w-full justify-around text-white hover:text-pink-400"
+                key={i}
+              >
+                <div className="underline">
+                  {x.slice(0, 4) + `...` + x.slice(x.length - 4, x.length)}
+                </div>
+                <div className="text-right">{allo} ARB</div>
+              </a>
+            );
+          })}
+      </div>
     </div>
   );
 };

@@ -618,6 +618,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@fontsource/suez-one@npm:^4.5.9":
+  version: 4.5.9
+  resolution: "@fontsource/suez-one@npm:4.5.9"
+  checksum: 0c4ae861592e1883812b0500b1d380e4b8fa67de0906ad9e9f8aed5565b1976b129f4ac3c0c5e4105df53135d3ebb90946b4c6e75871fc1e48dfc49a2a885d00
+  languageName: node
+  linkType: hard
+
 "@gar/promisify@npm:^1.1.3":
   version: 1.1.3
   resolution: "@gar/promisify@npm:1.1.3"
@@ -1236,6 +1243,13 @@ __metadata:
   bin:
     astring: bin/astring
   checksum: bc0b98087350c4a0c8a510d491d648cf8b299ec904629d5e0f5ae8d2ccc515cd27475327bb9729c7e92f4a4873adcd05cef15379d0f6f7293f1320319f0d24f0
+  languageName: node
+  linkType: hard
+
+"astro-seo@npm:^0.7.1":
+  version: 0.7.1
+  resolution: "astro-seo@npm:0.7.1"
+  checksum: f6f51a401a995637c740c517b980047e5257d73f8f2aead7ec648602be146fcb0c6ccda1f3b6e95636c75e344460f785ea73df7351c60e00dfc30ed3f7db546d
   languageName: node
   linkType: hard
 
@@ -4871,10 +4885,12 @@ __metadata:
     "@astrojs/mdx": ^0.18.2
     "@astrojs/react": ^2.1.0
     "@astrojs/tailwind": ^3.1.1
+    "@fontsource/suez-one": ^4.5.9
     "@types/canvas-confetti": ^1.6.0
     "@types/react": ^18.0.21
     "@types/react-dom": ^18.0.6
     astro: ^2.1.5
+    astro-seo: ^0.7.1
     autoprefixer: ^10.4.14
     canvas-confetti: ^1.6.0
     ethers: ^6.2.0
