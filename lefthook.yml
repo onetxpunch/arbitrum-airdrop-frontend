@@ -1,5 +1,5 @@
 pre-commit:
   commands:
     prettier:
-      glob: "*.{astro,js,ts,json,yml,tsx,jsx,cjs,mjs}"
+      glob: "*.{astro,js,ts,json,yml,tsx,jsx,cjs,mjs,scss,css}"
       run: yarn prettier -w {staged_files}
